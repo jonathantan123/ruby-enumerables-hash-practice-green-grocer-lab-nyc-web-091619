@@ -57,6 +57,4 @@ def checkout(items, coupons)
 end
   
     
-  
-  
-end
+
