@@ -41,20 +41,20 @@ def apply_clearance(cart)
   cart 
 end 
 
-def checkout(cart, coupons)
-  first_cart = consolidate_cart(cart)
-  second_cart = apply_coupons(first_cart, coupons)
-  third_cart = apply_clearance(second_cart)
+def checkout(items, coupons)
+  cart = consolidate_cart(items)
+  cart1 = apply_coupons(cart, coupons)
+  cart2 = apply_clearance(cart1)
   
-  total = 0 
-  third_cart.each do |item, attributes_hash|
-    total += (item[:price] * item[:count])
- end 
- 
- if total > 100 
-    total = (total * 0.8).round(2)
-end 
-
+  total = 0
+  
+  cart2.each do |name, price_hash|
+    total += price_hash[:price] * price_hash[:count]
+  end
+  
+  total > 100 ? total * 0.9 : total
+  
+end
   
     
   
