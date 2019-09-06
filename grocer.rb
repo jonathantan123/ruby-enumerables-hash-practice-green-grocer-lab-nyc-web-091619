@@ -31,7 +31,7 @@ def apply_coupons(cart, coupons)
         cart[coupon_item]= {:price => coupon[:cost]/coupon[:num], :clearance => cart[item_name][:clearance], :count => coupon[:num] }
       cart[item_name][:count] -= coupon[:num] 
  end
- end 
+ end
  end 
  end
  cart 
@@ -57,7 +57,7 @@ def checkout(items, coupons)
   cart2.each do |name, price_hash|
     total += price_hash[:price] * price_hash[:count]
   end
-total > 100? total * .09 : total 
+  total > 100 ? total * 0.9 : total 
   
 end
   
