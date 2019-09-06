@@ -47,6 +47,7 @@ def checkout(cart, coupons)
   third_cart = apply_clearance(second_cart)
   
   total = 0 
+  third_cart.each do |item
  end 
  
  if total > 100 
