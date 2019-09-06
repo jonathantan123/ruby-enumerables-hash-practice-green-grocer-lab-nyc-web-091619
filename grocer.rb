@@ -46,7 +46,7 @@ def checkout(cart, coupons)
   second_cart = apply_coupons(first_cart, coupons)
   third_cart = apply_clearance(second_cart)
   
-
+  total = 0 
  end 
  
  if total > 100 
